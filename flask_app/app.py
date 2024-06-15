@@ -16,9 +16,9 @@ def get_homepage():
         path_save = os.path.join(UPLOAD_PATH, filename)
         upload_file.save(path_save)
         text = ocr(path_save, filename)
-        return render_template("index.html")    
+        return render_template(("index.html"), upload=True, upload_image=filename, text=text)    
     
-    return render_template("index.html")
+    return render_template(("index.html"), upload=False)
 
 if __name__ == "__main__":
     app.run(debug=True)

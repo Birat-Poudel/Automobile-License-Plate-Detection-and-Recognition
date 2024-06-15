@@ -3,13 +3,65 @@
 {% block body %}
     <div class="container">
         <br><br>
-
         <form action="#" method="POST" enctype="multipart/form-data">
             <div class="input-group">
                 <input type="file" class="form-control" name="image_name" required>
                 <input type="submit" value="Upload" class="btn btn-outline-secondary">
             </div>
         </form>
-
     </div>
+
+    {% if upload %}
+        <div class="container" >
+            <br><br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Uploaded Image</th>
+                        <th>Uploaded Image with bounding box on number plate</th>
+                    </tr>                       
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td style="width: 600px; padding-right: 25px;">
+                            <img class="rounded float-left img-fluid" src="/static/uploads/{{upload_image}}" alt ="Automobile's image"/>
+                        </td>
+
+                        <td style="width: 600px; padding-right: 25px;">
+                            <img class="rounded float-right img-fluid" src="/static/predict/{{upload_image}}" alt ="Automobile's image"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th >Cropped License Plate Image</th>
+                        <th >Number Plate</th>
+                    </tr>                       
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td style="width: 600px; padding-right: 25px;">
+                            <img class="float-left img-fluid" src="/static/roi/{{upload_image}}" alt ="Automobile's number plate image"/>
+                        </td>
+
+                        <td style="width: 600px;">
+                            <h1 class="display-8"> {{text}} </h1>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+            <br>
+
+        </div>
+    {% endif %}
+
 {% endblock %}
