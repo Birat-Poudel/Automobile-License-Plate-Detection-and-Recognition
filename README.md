@@ -5,11 +5,11 @@
 2. Text Extraction from License Plate
     - Google Tesseract (Optical Character Recognition)
 
-#### Application UI
+#### Application UI:
 
 ![Application UI](./UI.png)
 
-#### Limitations of PyTesseract
+#### Limitations of PyTesseract:
 
 1. Text shouldn't have any kind of skewness.
 2. Text shouldn't be of low resolutions.
