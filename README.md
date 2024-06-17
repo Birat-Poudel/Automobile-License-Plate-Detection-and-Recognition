@@ -2,6 +2,8 @@
 
 1. License Plate Detection
     - Deep Learning Model (Inception-ResNet-v2)
+    - For real time license plate detection (YOLOv8)
+    
 2. Text Extraction from License Plate
     - Google Tesseract (Optical Character Recognition)
 
